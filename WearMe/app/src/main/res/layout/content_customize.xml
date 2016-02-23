@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#8585ad"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".customize"
+    tools:showIn="@layout/activity_customize"
+    android:id="@+id/content">
+
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_marginBottom="127dp"
+        android:src="@drawable/plainwhiteshirt"
+        android:id="@+id/shirt"/>
+
+    <ImageView
+        android:layout_width="75sp"
+        android:layout_height="125sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:scaleType="centerCrop"
+        android:id="@+id/cameraPicture" />
+
+    <ImageView
+        android:id="@+id/expanded_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="120dp"
+        android:id="@+id/editView">
+
+    </RelativeLayout>
+
+
+
+    <!-- Initial Settings Buttons -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-8dp"
+        android:visibility="visible"
+        android:weightSum="3"
+        android:id="@+id/initialSettings">
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="-8dp"
+            android:fontFamily="sans-serif-light"
+            android:layout_marginLeft="-8dp"
+            android:onClick="showTextSettings"
+            android:id="@+id/text"
+            android:text="text"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/text"
+            android:fontFamily="sans-serif-light"
+            android:layout_marginRight="-8dp"
+            android:onClick="showPictureSettings"
+            android:id="@+id/picture"
+            android:text="picture"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:fontFamily="sans-serif-light"
+            android:layout_marginRight="-8dp"
+            android:id="@+id/shapes"
+            android:text="shapes"
+            android:onClick="showShapeSettings"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+    <!-- Text Settings Buttons -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-8dp"
+        android:weightSum="4"
+        android:visibility="gone"
+        android:id="@+id/textSettings">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:fontFamily="sans-serif-light"
+            android:layout_marginLeft="-8dp"
+            android:layout_marginRight="-8dp"
+            android:id="@+id/addTextBox"
+            android:onClick="addTextBox"
+            android:text="Add"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:fontFamily="sans-serif-light"
+            android:layout_marginRight="-8dp"
+            android:id="@+id/color"
+            android:text="color"
+            android:onClick="colorPicker"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/color"
+            android:fontFamily="sans-serif-light"
+            android:layout_marginRight="-8dp"
+            android:id="@+id/font"
+            android:text="font"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:fontFamily="sans-serif-light"
+            android:layout_marginRight="-8dp"
+            android:id="@+id/format"
+            android:onClick="format"
+            android:text="format"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <!-- Picture Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-8dp"
+        android:weightSum="2"
+        android:visibility="gone"
+        android:id="@+id/pictureSettings">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:fontFamily="sans-serif-light"
+            android:layout_marginLeft="-8dp"
+            android:layout_marginRight="-8dp"
+            android:text="Take a Picture"
+            android:onClick="takePicture"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:fontFamily="sans-serif-light"
+            android:layout_marginRight="-8dp"
+            android:text="Choose from Gallery"
+            android:onClick="chooseFromGallery"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <!-- Shape Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-8dp"
+        android:weightSum="3"
+        android:visibility="gone"
+        android:id="@+id/shapeSettings">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="Circle"
+            android:fontFamily="sans-serif-light"
+            android:layout_marginLeft="-8dp"
+            android:layout_marginRight="-8dp"
+            android:layout_weight="1"
+            android:onClick="drawCircle" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="Triangle"
+            android:fontFamily="sans-serif-light"
+            android:layout_marginRight="-8dp"
+            android:layout_weight="1"
+            android:onClick="drawTriangle" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="Square"
+            android:fontFamily="sans-serif-light"
+            android:layout_marginRight="-8dp"
+            android:layout_weight="1"
+            android:onClick="drawSquare" />
+
+    </LinearLayout>
+
+
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:columnCount="2000"
+        android:rowCount="2000"
+        android:id="@+id/gridEditText"></GridLayout>
+
+
+</RelativeLayout>
